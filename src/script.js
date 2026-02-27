@@ -98,4 +98,90 @@
       alert("Submission failed. Please call/text (602) 767-3546.");
     }
   });
+
+  // ===== TESTIMONIALS CAROUSEL =====
+  const testimonialTrack = document.getElementById("testimonialTrack");
+  const carouselPrevBtn = document.getElementById("carouselPrevBtn");
+  const carouselNextBtn = document.getElementById("carouselNextBtn");
+  
+  if (testimonialTrack && carouselPrevBtn && carouselNextBtn) {
+    let position = 0;
+    const cardWidth = testimonialTrack.querySelector(".testimonialCard")?.offsetWidth || 0;
+    
+    const updateCarousel = () => {
+      if (testimonialTrack) {
+        testimonialTrack.style.transform = `translateX(${position}px)`;
+      }
+    };
+
+    carouselPrevBtn.addEventListener("click", () => {
+      const maxScroll = -Math.max(0, (testimonialTrack.scrollWidth - window.innerWidth + 24));
+      position = Math.min(0, position + cardWidth);
+      updateCarousel();
+    });
+
+    carouselNextBtn.addEventListener("click", () => {
+      const maxScroll = -(testimonialTrack.scrollWidth - window.innerWidth + 24);
+      position = Math.max(maxScroll, position - cardWidth);
+      updateCarousel();
+    });
+  }
+
+  // ===== PRICING CALCULATOR =====
+  const sqftInput = document.getElementById("sqft");
+  const servicesSelect = document.getElementById("services");
+  const priceRangeDisplay = document.getElementById("priceRange");
+  const sqftDisplay = document.getElementById("sqftDisplay");
+
+  const calculatePrice = () => {
+    const sqft = Number(sqftInput?.value || 20000);
+    const service = servicesSelect?.value || "wash-sweep";
+    
+    // Per-sqft pricing tiers
+    const baseRate = sqft < 10000 ? 0.25 : sqft < 30000 ? 0.20 : 0.15;
+    const washCost = sqft * baseRate;
+    
+    let low, high;
+    if (service === "wash") {
+      low = washCost * 0.9;
+      high = washCost * 1.1;
+    } else if (service === "wash-sweep") {
+      low = washCost * 1.3;
+      high = washCost * 1.5;
+    } else {
+      low = washCost * 1.8;
+      high = washCost * 2.2;
+    }
+
+    // Add minimum threshold
+    low = Math.max(low, 2000);
+    high = Math.max(high, 3000);
+
+    sqftDisplay.textContent = sqft.toLocaleString();
+    priceRangeDisplay.textContent = `$${Math.round(low).toLocaleString()} - $${Math.round(high).toLocaleString()}`;
+  };
+
+  sqftInput?.addEventListener("input", calculatePrice);
+  servicesSelect?.addEventListener("change", calculatePrice);
+  document.getElementById("estQuoteBtn")?.addEventListener("click", () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  });
+
+  // ===== SCROLL TO TOP BUTTON =====
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn?.classList.add("show");
+    } else {
+      scrollTopBtn?.classList.remove("show");
+    }
+  });
+
+  scrollTopBtn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Initial calculation
+  calculatePrice();
 })();

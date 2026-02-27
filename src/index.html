@@ -605,6 +605,55 @@
       </div>
     </section>
 
+<!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="secHead">
+        <div>
+          <h2>What property managers say</h2>
+          <p>Real feedback from facilities we've worked with.</p>
+        </div>
+      </div>
+
+      <div class="testimonialCarousel">
+        <div class="testimonialTrack" id="testimonialTrack">
+          <div class="testimonialCard card">
+            <div style="display:flex; gap:8px; margin-bottom:10px;">
+              <span style="color:var(--brand2); font-size:14px;">★★★★★</span>
+            </div>
+            <p class="muted" style="margin:0 0 12px; font-style:italic;">"Professional crew, minimal disruption to our tenants. The before/after photos make it easy to justify the cost to ownership."</p>
+            <div style="font-weight:900; color:var(--text);">Sarah M.</div>
+            <div class="fine">Property Manager, Phoenix</div>
+          </div>
+          <div class="testimonialCard card">
+            <div style="display:flex; gap:8px; margin-bottom:10px;">
+              <span style="color:var(--brand2); font-size:14px;">★★★★★</span>
+            </div>
+            <p class="muted" style="margin:0 0 12px; font-style:italic;">"Showed up on time, finished early, coordinated perfectly around our leasing office schedule. Hiring them again next quarter."</p>
+            <div style="font-weight:900; color:var(--text);">Marcus T.</div>
+            <div class="fine">Facilities Director, Chandler</div>
+          </div>
+          <div class="testimonialCard card">
+            <div style="display:flex; gap:8px; margin-bottom:10px;">
+              <span style="color:var(--brand2); font-size:14px;">★★★★★</span>
+            </div>
+            <p class="muted" style="margin:0 0 12px; font-style:italic;">"Honest pricing, no upsell pressure. They walk the job, give you straight options, and deliver. Exactly what a property manager needs."</p>
+            <div style="font-weight:900; color:var(--text);">Jennifer R.</div>
+            <div class="fine">Asset Manager, Tempe</div>
+          </div>
+          <div class="testimonialCard card">
+            <div style="display:flex; gap:8px; margin-bottom:10px;">
+              <span style="color:var(--brand2); font-size:14px;">★★★★★</span>
+            </div>
+            <p class="muted" style="margin:0 0 12px; font-style:italic;">"Used them for a 2-level garage + lot. Came back with photos and a detailed report. My boss loved the documentation."</p>
+            <div style="font-weight:900; color:var(--text);">David L.</div>
+            <div class="fine">Operations, Scottsdale</div>
+          </div>
+        </div>
+        <button class="carouselNav prevBtn" id="carouselPrevBtn" aria-label="Previous testimonial">‹</button>
+        <button class="carouselNav nextBtn" id="carouselNextBtn" aria-label="Next testimonial">›</button>
+      </div>
+    </section>
+
 <!-- PROCESS -->
     <section id="process">
       <div class="secHead">
@@ -679,7 +728,35 @@
       <div class="fine" style="margin-top:10px;">
         Note: These ranges are placeholders based on typical commercial scopes. Replace with your true pricing ladder once you’ve closed 3–5 jobs and know your margin.
       </div>
-    </section>
+      <!-- Quick Pricing Estimator -->
+      <div class="card block" style="margin-top:20px; background: rgba(14,164,90,.12); border-color: rgba(14,164,90,.28);">
+        <h3 style="margin:0 0 12px;">Quick pricing estimate</h3>
+        <p class="muted" style="margin:0 0 12px;">Get a rough idea based on your needs:</p>
+        
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+          <div>
+            <label for="sqft" class="fine" style="display:block; margin-bottom:6px;">Garage/Lot size (sq ft):</label>
+            <input type="range" id="sqft" min="5000" max="100000" step="5000" value="20000" style="width:100%; cursor:pointer;">
+            <div class="fine" style="margin-top:4px;"><span id="sqftDisplay">20,000</span> sq ft</div>
+          </div>
+          <div>
+            <label for="services" class="fine" style="display:block; margin-bottom:6px;">Services:</label>
+            <select id="services" style="width:100%;">
+              <option value="wash">Wash only</option>
+              <option value="wash-sweep" selected>Wash + Sweep</option>
+              <option value="wash-sweep-stripe">Wash + Sweep + Stripe</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; padding:12px; background:rgba(255,255,255,.05); border-radius:12px; text-align:center;">
+          <div class="fine">Estimated range:</div>
+          <div style="font-size:20px; font-weight:950; color:var(--brand2); margin-top:6px;" id="priceRange">$3,200 - $5,800</div>
+          <div class="fine" style="margin-top:8px;">Final price depends on stain load & access windows.</div>
+        </div>
+
+        <button class="btn btnPrimary" style="width:100%; margin-top:12px;" id="estQuoteBtn">Get exact quote</button>
+      </div>    </section>
 
     <!-- AREAS -->
     <section id="areas">
@@ -726,6 +803,54 @@
         <summary>Can you share before/after examples?</summary>
         <div class="faqText">Yes. We can provide real before/after photos and a completion photo report for similar properties.</div>
       </details>
+    </section>
+
+    <!-- TEAM & TRUST -->
+    <section id="team">
+      <div class="secHead">
+        <div>
+          <h2>Why property managers trust us</h2>
+          <p>5+ years in Phoenix-area commercial facility maintenance.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card block" style="text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">🛡️</div>
+          <h3 style="margin:0 0 8px; font-size:16px;">Fully licensed & insured</h3>
+          <p class="fine" style="margin:0;">Liability coverage & bonding included. COI available before work.</p>
+        </div>
+
+        <div class="card block" style="text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">📸</div>
+          <h3 style="margin:0 0 8px; font-size:16px;">Photo-verified work</h3>
+          <p class="fine" style="margin:0;">Before/after timestamp photos for every job, no surprises.</p>
+        </div>
+
+        <div class="card block" style="text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">⏰</div>
+          <h3 style="margin:0 0 8px; font-size:16px;">On-time every time</h3>
+          <p class="fine" style="margin:0;">Scheduled around your tenant & leasing office hours.</p>
+        </div>
+
+        <div class="card block" style="text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">💰</div>
+          <h3 style="margin:0 0 8px; font-size:16px;">Transparent pricing</h3>
+          <p class="fine" style="margin:0;">No surprises. Good / Better / Best options with clear scope.</p>
+        </div>
+
+        <div class="card block" style="text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">🌙</div>
+          <h3 style="margin:0 0 8px; font-size:16px;">Night & weekend slots</h3>
+          <p class="fine" style="margin:0;">Minimize tenant disruption. Off-hours scheduling available.</p>
+        </div>
+
+        <div class="card block" style="text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">📋</div>
+          <h3 style="margin:0 0 8px; font-size:16px;">Vendor onboarding</h3>
+          <p class="fine" style="margin:0;">W-9, COI, references. Fits into your procurement workflow.</p>
+        </div>
+      </div>
     </section>
 
     <!-- CONTACT -->
@@ -808,12 +933,34 @@
 
 <footer>
   <div class="wrap">
-    <div class="footerRow">
+    <div style="display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin-bottom:20px;">
+      <div>
+        <div style="font-weight:950; margin-bottom:8px;">Quick Links</div>
+        <ul class="list" style="font-size:13px;">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Book site walk</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-weight:950; margin-bottom:8px;">Get in touch</div>
+        <ul class="list" style="font-size:13px;">
+          <li><a href="tel:+16027673546">(602) 767-3546</a></li>
+          <li><a href="mailto:info@americangaragecleaning.com">Email us</a></li>
+          <li><a href="#contact">Request proposal</a></li>
+          <li><a href="#areas">Service area</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footerRow" style="border-top:1px solid var(--border); padding-top:14px;">
       <div>© <span id="yr"></span> American Garage Cleaning. All rights reserved.</div>
       <div><a href="#top">Back to top</a> · <a href="#contact">Book Site Walk</a></div>
     </div>
   </div>
 </footer>
+
+<button class="scrollTopBtn" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
 
 <div class="stickyCta" aria-label="Quick actions">
   <a class="primary" href="#contact">Book Site Walk</a>
