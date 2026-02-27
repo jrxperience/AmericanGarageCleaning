@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Commercial Parking Garage & Lot Cleaning (Phoenix) | American Garage Cleaning</title>
+  <meta name="description" content="Commercial garage & lot maintenance across Phoenix Metro. Wash → Sweep → Stripe. Off-hours scheduling, photo-verified completion, and 24-hour proposals after a 10-minute site walk." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://americangaragecleaning.com/" />
+
+  <link rel="icon" type="image/png" href="favicon-32.png" />
+<!-- Open Graph -->
+  <meta property="og:title" content="American Garage Cleaning | Phoenix Garage & Lot Maintenance" />
+  <meta property="og:description" content="Wash → Sweep → Stripe for commercial properties across Phoenix Metro. Book a 10-minute site walk and get a 24-hour proposal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://americangaragecleaning.com/" />
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "American Garage Cleaning",
+    "url": "https://americangaragecleaning.com/",
+    "telephone": "+1-602-767-3546",
+    "email": "info@americangaragecleaning.com",
+    "areaServed": "Phoenix, AZ and surrounding areas (approx. 50-mile radius)",
+    "address": { "@type": "PostalAddress", "addressLocality": "Phoenix", "addressRegion": "AZ", "addressCountry": "US" },
+    "serviceType": [
+      "Commercial parking garage washing",
+      "Commercial parking lot washing",
+      "Parking lot sweeping",
+      "Parking lot striping"
+    ],
+    "priceRange": "$$"
+  }
+  </script>
+  <link rel="preload" as="image" href="hero-clean-3-1920x1080.webp" type="image/webp" />
+  <link rel="stylesheet" href="styles.css" />
+    :root{
+      --brand:#087A44;
+      --brand2:#0EA45A;
+      --steel:#4B5C69;
+
+      --bg:#07110c;
+      --panel:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12);
+
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.72);
+
+      --shadow: 0 18px 55px rgba(0,0,0,.46);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box }
+    html{ scroll-behavior:smooth }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(900px 520px at 12% -10%, rgba(8,122,68,.40), transparent 60%),
+        radial-gradient(760px 520px at 92% 0%, rgba(75,92,105,.24), transparent 55%),
+        var(--bg);
+    }
+    a{ color:inherit; text-decoration:none }
+    .wrap{ max-width: var(--max); margin:0 auto; padding:0 18px; }
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .muted{ color: var(--muted); }
+    .fine{ font-size:12px; color: rgba(255,255,255,.62); line-height:1.45; }
+
+    /* Header */
+    header{
+      position: sticky; top:0; z-index: 50;
+      background: rgba(7,17,12,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      min-width: 260px;
+    }
+    .brandMark{
+      width:40px; height:40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: var(--shadow);
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 1000;
+      color:#06120a;
+      user-select:none;
+    }
+    .brandText{ line-height:1.05; }
+    .brandText small{
+      display:block;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    nav a{
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+    nav a:hover{ color: var(--text); background: rgba(255,255,255,.06); }
+
+    .navRight{ display:flex; align-items:center; gap:10px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      font-size: 14px;
+      gap: 8px;
+      transition: transform .12s ease, background .12s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
+    .btnPrimary{
+      border: 0;
+      color: #06120a;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+    .burger{
+      display:none;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 950;
+    }
+    @media (max-width: 980px){
+      nav{ display:none; }
+      .burger{ display:inline-flex; }
+      .brand{ min-width: unset; }
+    }
+    .mobileMenu{ display:none; padding: 0 0 14px; }
+    .mobileMenu a{
+      display:block;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 900;
+    }
+    .mobileMenu a:hover{ color: var(--text); background: rgba(255,255,255,.07); }
+
+    /* Hero */
+    .hero{ padding: 52px 0 18px; }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){ .heroGrid{ grid-template-columns:1fr; } }
+
+    .heroLeft{
+      padding: 26px;
+      position: relative;
+      background:
+        linear-gradient(120deg, rgba(7,17,12,.92), rgba(7,17,12,.58));
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      color: rgba(255,255,255,.76);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .kicker .dot{
+      width:10px; height:10px; border-radius:99px;
+      background: var(--brand2);
+      box-shadow: 0 0 0 7px rgba(14,164,90,.14);
+    }
+    h1{
+      font-size: 44px;
+      line-height: 1.06;
+      margin: 12px 0 10px;
+      letter-spacing: -0.02em;
+    }
+    @media (max-width: 520px){ h1{ font-size: 34px; } }
+
+    .sub{
+      color: rgba(255,255,255,.86);
+      font-size: 16px;
+      margin: 0 0 14px;
+      max-width: 70ch;
+    }
+
+    .trustRow{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px;
+    }
+    .trust{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      color: rgba(255,255,255,.90);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .heroCtas{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 18px; }
+    .heroRight{
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .heroRight h3{ margin: 0 0 8px; font-size: 20px; letter-spacing: -0.01em; }
+    .phoneBox{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 12px;
+      font-weight: 950;
+      color: rgba(255,255,255,.90);
+      background: rgba(8,122,68,.22);
+      border: 1px solid rgba(8,122,68,.35);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    /* Sections */
+    section{ padding: 24px 0; }
+    .secHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .secHead h2{
+      margin:0;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+    }
+    .secHead p{ margin:0; color: var(--muted); max-width: 72ch; }
+
+    .grid3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    @media (max-width: 980px){ .grid3{ grid-template-columns:1fr; } }
+
+    .block{ padding: 16px; background: rgba(255,255,255,.05); }
+    .list{ margin: 0; padding-left: 18px; color: var(--muted); }
+    .list li{ margin: 6px 0; }
+
+    .twoCol{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 980px){ .twoCol{ grid-template-columns:1fr; } }
+
+    details{
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      padding: 12px 12px;
+    }
+    details + details{ margin-top: 10px; }
+    summary{ cursor:pointer; font-weight: 950; }
+    summary::-webkit-details-marker{ display:none; }
+    .faqText{ color: var(--muted); margin: 8px 0 0; }
+
+    /* Form */
+    .formWrap{ padding: 16px; }
+    form{ display:grid; gap: 10px; margin-top: 10px; }
+    input, select, textarea{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline: none;
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+    .step{ display:none; }
+    .step.active{ display:block; }
+    .progress{
+      display:flex; gap: 8px; align-items:center; margin-bottom: 10px;
+      color: rgba(255,255,255,.70); font-weight: 900; font-size: 12px;
+      text-transform: uppercase; letter-spacing: .12em;
+    }
+    .bar{
+      flex: 1;
+      height: 10px;
+      background: rgba(255,255,255,.10);
+      border-radius: 999px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .bar > span{
+      display:block; height:100%;
+      width: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+    .bar > span.done{ width: 100%; }
+    .success{
+      display:none;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(14,164,90,.35);
+      background: rgba(14,164,90,.12);
+    }
+
+    footer{
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+    }
+    .footerRow{ display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+    /* Sticky mobile CTA */
+    .stickyCta{
+      position: fixed;
+      left: 12px; right: 12px; bottom: 12px;
+      display:none;
+      gap: 10px;
+      z-index: 60;
+    }
+    .stickyCta a{
+      flex: 1;
+      padding: 12px 14px;
+      border-radius: 16px;
+      font-weight: 950;
+      text-align:center;
+      border: 1px solid var(--border);
+      background: rgba(7,17,12,.78);
+      backdrop-filter: blur(10px);
+    }
+    .stickyCta a.primary{
+      border:0;
+      color:#06120a;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+    @media (max-width: 980px){ .stickyCta{ display:flex; } }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="American Garage Cleaning home">
+        <div class="brandMark" aria-hidden="true"><img src="agc-mark-64.png" alt="" width="40" height="40" loading="eager" decoding="async" /></div>
+        <div class="brandText">
+          American Garage Cleaning
+          <small>Phoenix Metro (~50 miles) • Wash → Sweep → Stripe</small>
+        </div>
+      </a>
+
+      <nav aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#proof">Gallery</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Options</a>
+        <a href="#areas">Service Area</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Book Site Walk</a>
+      </nav>
+
+      <div class="navRight">
+        <a class="btn" href="tel:+16027673546">Call / Text (602) 767-3546</a>
+        <a class="btn btnPrimary" href="#contact">Get 24-Hour Proposal</a>
+        <button class="burger" id="burger" aria-label="Open menu">Menu</button>
+      </div>
+    </div>
+
+    <div class="mobileMenu" id="mobileMenu" aria-label="Mobile menu">
+      <a href="#services">Services</a>
+      <a href="#proof">Gallery</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Options</a>
+      <a href="#areas">Service Area</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Book Site Walk</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="heroShell">
+        <picture>
+          <source srcset="hero-clean-3-1920x1080.webp" type="image/webp">
+          <img class="heroBg" src="hero-clean-3-1920x1080.jpg" alt="Clean, wet commercial parking garage in Phoenix at night" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high">
+        </picture>
+
+        <div class="heroGrid">
+
+        <div class="card heroLeft">
+          <div class="kicker"><span class="dot"></span> Commercial parking facility maintenance</div>
+          <h1>Clean garages that look managed—without disrupting tenants.</h1>
+          <p class="sub">
+            We coordinate <strong>washing</strong> (visual impact), <strong>sweeping</strong> (maintenance), and <strong>striping</strong> (visibility/ADA).
+            Book a 10‑minute site walk and get a <strong>24‑hour proposal</strong> with clear options.
+          </p>
+
+          <div class="trustRow" aria-label="Trust and procurement signals">
+            <span class="trust">🛡️ COI / W‑9 ready</span>
+            <span class="trust">🌙 Night / weekend scheduling</span>
+            <span class="trust">📸 Photo‑verified completion</span>
+            <span class="trust">💧 Water‑recovery available (as required)</span>
+          </div>
+
+          <div class="heroCtas">
+            <a class="btn btnPrimary" href="#contact">Book a 10‑minute site walk</a>
+            <a class="btn" href="tel:+16027673546">Call / Text now</a>
+          </div>
+
+          <div class="fine" style="margin-top:12px;">
+            We confirm drain/reclaim requirements, access windows, and tenant traffic during the site walk.
+          </div>
+        </div>
+
+        <aside class="card heroRight">
+          <div>
+            <h3>What you get (procurement‑friendly)</h3>
+            <p class="muted" style="margin:0 0 10px;">
+              Clear scope, access plan, and documentation your PM team can file.
+            </p>
+
+            <div class="card block" style="margin:0;">
+              <div class="pill">Deliverables</div>
+              <ul class="list" style="margin-top:10px;">
+                <li>Optioned proposal (good / better / best)</li>
+                <li>Before/after photo report</li>
+                <li>Schedule window + traffic plan</li>
+                <li>COI/W‑9 packet available</li>
+                <li><a href="#proof" style="text-decoration:underline;">Gallery examples</a></li>
+              </ul>
+            </div>
+
+            <div class="phoneBox" style="margin-top:12px;">
+              <div>
+                <div class="muted" style="font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;">Call / Text</div>
+                <div style="font-weight:950;font-size:16px;">(602) 767‑3546</div>
+              </div>
+              <a class="btn" href="tel:+16027673546">Call</a>
+            </div>
+
+            <div class="fine" style="margin-top:10px;">Email: <strong>info@americangaragecleaning.com</strong></div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="secHead">
+        <div>
+          <h2>Services (in priority order)</h2>
+          <p>Start with perception (wash), then maintenance (sweep), then visibility and compliance (stripe).</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card block">
+          <div class="pill">Primary</div>
+          <h3 style="margin:10px 0 8px;">Garage & lot washing</h3>
+          <p class="muted" style="margin:0 0 10px;">Hot‑water washing for ramps, entries, turns, and high‑traffic zones.</p>
+          <ul class="list">
+            <li>Priority‑zone approach (not “spray everything”)</li>
+            <li>Degrease oil/food/gum hot spots where feasible</li>
+            <li>Before/after photos included</li>
+          </ul>
+        </div>
+
+        <div class="card block">
+          <div class="pill">Second</div>
+          <h3 style="margin:10px 0 8px;">Mechanical sweeping</h3>
+          <p class="muted" style="margin:0 0 10px;">Debris, gravel, sand, litter removal for safer lanes and drains.</p>
+          <ul class="list">
+            <li>One‑offs or recurring schedules</li>
+            <li>Pre‑wash prep or post‑construction cleanup</li>
+            <li>Off‑hours windows available</li>
+          </ul>
+        </div>
+
+        <div class="card block">
+          <div class="pill">Third</div>
+          <h3 style="margin:10px 0 8px;">Line striping</h3>
+          <p class="muted" style="margin:0 0 10px;">Refresh stalls, ADA markings, arrows, curbs, and fire lanes.</p>
+          <ul class="list">
+            <li>Coordinate around tenant traffic</li>
+            <li>Sharp, high‑visibility markings for a “managed” site</li>
+            <li>Schedule + photos for records</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF / GALLERY -->
+    <section id="proof">
+      <div class="secHead">
+        <div>
+          <h2>Recent work gallery</h2>
+          <p>Real job photos (used with permission). For garage-specific before/after pairs, we’ll add your AGC photos next.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        
+        <div class="card block">
+          <div class="pill">Recent work</div>
+          <h3 style="margin:10px 0 8px;">Parking garage washing</h3>
+          <picture>
+            <source srcset="images/gallery-1.webp" type="image/webp">
+            <img src="images/gallery-1.jpg" alt="Parking garage washing" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.12);">
+          </picture>
+          <div class="fine" style="margin-top:10px;">Photo from AZPWP job gallery (used with permission).</div>
+        </div>
+    
+        <div class="card block">
+          <div class="pill">Recent work</div>
+          <h3 style="margin:10px 0 8px;">Night / off-hours garage cleaning</h3>
+          <picture>
+            <source srcset="images/gallery-2.webp" type="image/webp">
+            <img src="images/gallery-2.jpg" alt="Night / off-hours garage cleaning" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.12);">
+          </picture>
+          <div class="fine" style="margin-top:10px;">Photo from AZPWP job gallery (used with permission).</div>
+        </div>
+    
+        <div class="card block">
+          <div class="pill">Recent work</div>
+          <h3 style="margin:10px 0 8px;">Ramp and corner detailing</h3>
+          <picture>
+            <source srcset="images/gallery-3.webp" type="image/webp">
+            <img src="images/gallery-3.jpg" alt="Ramp and corner detailing" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.12);">
+          </picture>
+          <div class="fine" style="margin-top:10px;">Photo from AZPWP job gallery (used with permission).</div>
+        </div>
+    
+        <div class="card block">
+          <div class="pill">Recent work</div>
+          <h3 style="margin:10px 0 8px;">Interior garage lanes</h3>
+          <picture>
+            <source srcset="images/gallery-4.webp" type="image/webp">
+            <img src="images/gallery-4.jpg" alt="Interior garage lanes" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.12);">
+          </picture>
+          <div class="fine" style="margin-top:10px;">Photo from AZPWP job gallery (used with permission).</div>
+        </div>
+    
+        <div class="card block">
+          <div class="pill">Recent work</div>
+          <h3 style="margin:10px 0 8px;">Commercial lot washdown</h3>
+          <picture>
+            <source srcset="images/gallery-5.webp" type="image/webp">
+            <img src="images/gallery-5.jpg" alt="Commercial lot washdown" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.12);">
+          </picture>
+          <div class="fine" style="margin-top:10px;">Photo from AZPWP job gallery (used with permission).</div>
+        </div>
+    
+        <div class="card block">
+          <div class="pill">Recent work</div>
+          <h3 style="margin:10px 0 8px;">Parking lot sweeping</h3>
+          <picture>
+            <source srcset="images/gallery-6.webp" type="image/webp">
+            <img src="images/gallery-6.jpg" alt="Parking lot sweeping" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.12);">
+          </picture>
+          <div class="fine" style="margin-top:10px;">Photo from AZPWP job gallery (used with permission).</div>
+        </div>
+    
+      </div>
+
+      <div class="card block" style="margin-top:12px;">
+        <h3 style="margin:0 0 8px;">Want garage-specific proof?</h3>
+        <p class="muted" style="margin:0;">
+          Upload 3 before/after pairs from your garage jobs and we’ll convert this section to sliders with your actual work.
+        </p>
+      </div>
+    </section>
+
+<!-- PROCESS -->
+    <section id="process">
+      <div class="secHead">
+        <div>
+          <h2>How it works (fast)</h2>
+          <p>Designed for property managers: minimum disruption, maximum documentation.</p>
+        </div>
+      </div>
+
+      <div class="twoCol">
+        <div class="card block">
+          <h3 style="margin:0 0 8px;">1) 10‑minute site walk</h3>
+          <ul class="list">
+            <li>Confirm access windows + tenant flow</li>
+            <li>Tag priority areas (entries, corners, ramps)</li>
+            <li>Confirm reclaim/compliance needs</li>
+          </ul>
+        </div>
+
+        <div class="card block">
+          <h3 style="margin:0 0 8px;">2) Optioned proposal in 24 hours</h3>
+          <ul class="list">
+            <li>Good / Better / Best scope options</li>
+            <li>Schedule plan (night/weekend if needed)</li>
+            <li>COI/W‑9 packet for vendor onboarding</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="secHead">
+        <div>
+          <h2>Proposal options (typical ranges)</h2>
+          <p>Final pricing depends on square footage, stain load, access windows, and documentation needs.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card block">
+          <h3 style="margin:0 0 6px;">Option A: Maintenance</h3>
+          <p class="muted" style="margin:0 0 10px;">Sweep + targeted hot‑spot wash.</p>
+          <div class="pill">Often starts around $2k</div>
+          <ul class="list" style="margin-top:10px;">
+            <li>Recurring maintenance suitable</li>
+            <li>Focus on high‑visibility lanes</li>
+          </ul>
+        </div>
+
+        <div class="card block" style="border-color: rgba(14,164,90,.28);">
+          <h3 style="margin:0 0 6px;">Option B: Refresh</h3>
+          <p class="muted" style="margin:0 0 10px;">Full wash + priority striping touch‑ups.</p>
+          <div class="pill">Often around $6k</div>
+          <ul class="list" style="margin-top:10px;">
+            <li>Best “looks managed” value</li>
+            <li>Targets ADA + key traffic zones</li>
+          </ul>
+        </div>
+
+        <div class="card block">
+          <h3 style="margin:0 0 6px;">Option C: Restoration</h3>
+          <p class="muted" style="margin:0 0 10px;">Deep clean + full markings + contract option.</p>
+          <div class="pill">Often $12k+</div>
+          <ul class="list" style="margin-top:10px;">
+            <li>Large garages / multi‑level sites</li>
+            <li>Bundled maintenance (6‑month)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fine" style="margin-top:10px;">
+        Note: These ranges are placeholders based on typical commercial scopes. Replace with your true pricing ladder once you’ve closed 3–5 jobs and know your margin.
+      </div>
+    </section>
+
+    <!-- AREAS -->
+    <section id="areas">
+      <div class="secHead">
+        <div>
+          <h2>Service area</h2>
+          <p>Phoenix Metro and surrounding cities (about a 50‑mile radius depending on routing and job size).</p>
+        </div>
+      </div>
+
+      <div class="card block">
+        <p class="muted" style="margin:0;">
+          Phoenix • Scottsdale • Tempe • Mesa • Chandler • Gilbert • Glendale • Peoria • Surprise • Goodyear • Avondale • Buckeye • Fountain Hills • Queen Creek • Paradise Valley
+        </p>
+        <div class="fine" style="margin-top:10px;">Outside this list? Submit the address—routing may still work.</div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="secHead">
+        <div>
+          <h2>FAQ</h2>
+          <p>Common questions from property managers and facility teams.</p>
+        </div>
+      </div>
+
+      <details class="card">
+        <summary>Do you work nights or weekends?</summary>
+        <div class="faqText">Yes. Off‑hours windows are available to reduce tenant/customer disruption.</div>
+      </details>
+
+      <details class="card">
+        <summary>Do you provide documentation?</summary>
+        <div class="faqText">Yes. Before/after photos and a completion summary suitable for records.</div>
+      </details>
+
+      <details class="card">
+        <summary>Can you support vendor onboarding (COI/W‑9)?</summary>
+        <div class="faqText">Yes. We can provide procurement documentation as part of the proposal process.</div>
+      </details>
+
+      <details class="card">
+        <summary>Can you share before/after examples?</summary>
+        <div class="faqText">Yes. We can provide real before/after photos and a completion photo report for similar properties.</div>
+      </details>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="secHead">
+        <div>
+          <h2>Book a site walk / request a 24‑hour proposal</h2>
+          <p>Two-step form = higher completion. After submit, your system should text + call fast.</p>
+        </div>
+      </div>
+
+      <div class="twoCol">
+        <div class="card formWrap">
+          <div class="progress" aria-label="Form progress">
+            <div>Step <span id="stepNum">1</span> of 2</div>
+            <div class="bar"><span id="barFill"></span></div>
+          </div>
+
+          <!-- Replace this endpoint with your real handler:
+               - GoHighLevel (webhook)
+               - Formspree
+               - Netlify Forms
+               - Your backend
+          -->
+          <form id="leadForm">
+            <!-- STEP 1 -->
+            <div class="step active" id="step1">
+              <input name="facility" id="facility" placeholder="Facility name / address (required)" required />
+              <input name="email" id="email" type="email" placeholder="Work email (required)" required />
+              <button class="btn btnPrimary" type="button" id="nextBtn">Continue</button>
+              <div class="fine">Tip: include cross streets + gate notes in step 2.</div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="step" id="step2">
+              <input name="phone" id="phone" placeholder="Mobile (required for callback)" required />
+              <select name="priority" id="priority" required>
+                <option value="" disabled selected>Most urgent need (required)</option>
+                <option>Garage/Lot Washing</option>
+                <option>Parking Lot Sweeping</option>
+                <option>Line Striping</option>
+                <option>Multiple services</option>
+              </select>
+              <textarea name="notes" id="notes" placeholder="Notes: access constraints, preferred windows, problem areas, onboarding needs (COI/W‑9), etc."></textarea>
+
+              <!-- Basic UTM capture -->
+              <input type="hidden" name="utm_source" id="utm_source" />
+              <input type="hidden" name="utm_campaign" id="utm_campaign" />
+              <input type="hidden" name="utm_term" id="utm_term" />
+              <input type="hidden" name="utm_content" id="utm_content" />
+
+              <button class="btn btnPrimary" type="submit">Request Site Walk + Proposal</button>
+              <button class="btn" type="button" id="backBtn">Back</button>
+              <div class="fine">By submitting, you agree we may contact you about your request.</div>
+            </div>
+          </form>
+
+          <div class="success" id="successBox" role="status" aria-live="polite">
+            <strong>Request received.</strong> You should call/text this lead within 5 minutes for best results.
+          </div>
+        </div>
+
+        <div class="card block">
+          <h3 style="margin:0 0 8px;">Fast-response checklist (internal)</h3>
+          <ul class="list">
+            <li>Auto SMS confirmation immediately</li>
+            <li>Human call attempt in &lt;5 minutes during business hours</li>
+            <li>Book site walk on the call (10 minutes)</li>
+            <li>Send proposal options within 24 hours</li>
+          </ul>
+          <div class="fine" style="margin-top:10px;">
+            If you use GoHighLevel, route form → SMS → call connect → pipeline stage automatically.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footerRow">
+      <div>© <span id="yr"></span> American Garage Cleaning. All rights reserved.</div>
+      <div><a href="#top">Back to top</a> · <a href="#contact">Book Site Walk</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="stickyCta" aria-label="Quick actions">
+  <a class="primary" href="#contact">Book Site Walk</a>
+  <a href="tel:+16027673546">Call</a>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>

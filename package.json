@@ -1,0 +1,21 @@
+{
+  "name": "american-garage-cleaning",
+  "version": "0.1.0",
+  "description": "Static marketing site for American Garage Cleaning",
+  "scripts": {
+    "build": "node build.js",
+    "start": "npx serve dist",
+    "clean": "rm -rf dist",
+    "lint:html": "html-validate 'src/**/*.html'",
+    "check": "npm run lint:html"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.19",
+    "serve": "^14.2.0",
+    "html-minifier-terser": "^7.1.0",
+    "html-validate": "^8.4.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
