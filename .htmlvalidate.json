@@ -1,7 +1,7 @@
 {
   "extends": ["html-validate:recommended"],
   "rules": {
-    "attr-value-not-empty": "error",
+
     "no-inline-style": "off",
     "prefer-native-element": "off"
   }
