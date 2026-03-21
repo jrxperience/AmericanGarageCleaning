@@ -79,7 +79,7 @@ def create_advanced_logo(width=800, height=200, filepath="src/images/agc-logo.pn
     mark_img = Image.new("RGBA", (mark_size, mark_size), (255, 255, 255, 0))
     mark_draw = ImageDraw.Draw(mark_img)
 
-    # Draw Mark (Same as create_advanced_mark but localized)
+    # Draw Mark
     margin = int(mark_size * 0.05)
     mark_draw.ellipse([margin, margin, mark_size - margin, mark_size - margin], fill=brand_blue)
     inner_margin = int(mark_size * 0.12)
@@ -128,19 +128,15 @@ def create_advanced_logo(width=800, height=200, filepath="src/images/agc-logo.pn
         font_main = ImageFont.load_default()
         font_sub = ImageFont.load_default()
 
-    main_text = "American Garage Cleaning"
-    sub_text = "COMMERCIAL MAINTENANCE"
-
     # Draw Main Text
     draw.text((text_x, height * 0.25), "American ", font=font_main, fill=red)
 
-    # Manually calculate width to place next word correctly
     bbox = draw.textbbox((0, 0), "American ", font=font_main)
     w1 = bbox[2] - bbox[0]
     draw.text((text_x + w1, height * 0.25), "Garage Cleaning", font=font_main, fill=white)
 
     # Draw Sub Text
-    draw.text((text_x + 5, height * 0.65), sub_text, font=font_sub, fill=steel)
+    draw.text((text_x + 5, height * 0.65), "COMMERCIAL MAINTENANCE", font=font_sub, fill=steel)
 
     # Crop transparent borders roughly for better usage
     bbox = img.getbbox()
