@@ -42,3 +42,7 @@ content = re.sub(r'<title>Phoenix Commercial Parking Garage &amp;amp; Lot Cleani
 
 with open('src/index.html', 'w') as f:
     f.write(content)
+<<<<<<< HEAD
+=======
+
+>>>>>>> fbfa8c1 (feat: Final comprehensive branding, SEO, and visual asset overhaul)
